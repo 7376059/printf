@@ -7,19 +7,13 @@ void param_setzero(void)
 	g_param->space = 0;
 	g_param->zero = 0;
 	g_param->oktotorp = 0;
+	g_param->width = 0;
+	g_param->prescision = 0;
+	
 	g_param->type = 0;
+	g_param->size = 0;
 }
 
-
-
-int ft_analyze(const char *str)
-{
-	int i;
-
-	i = 0;
-
-	return (1);	
-}
 
 void ft_printf(const char *str, ...)
 {
@@ -27,6 +21,7 @@ void ft_printf(const char *str, ...)
 	
 	i = 0;
 	g_param = (t_param*)malloc(sizeof(t_param));
+	g_flag = 0;
 	param_setzero();
 	while (str[i])
 	{
@@ -37,7 +32,8 @@ void ft_printf(const char *str, ...)
 		}
 		else
 		{
-			write(1, &str[i], 1);
+			//write(1, &str[i], 1);
+			printf("%c", str[i]);
 			i++;
 		}
 	}
