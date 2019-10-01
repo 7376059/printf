@@ -15,6 +15,13 @@ void param_setzero(void)
 }
 
 
+void print_param(va_list lst)
+{
+	int x = va_arg (lst, int);
+	printf("%d\n", x);
+}
+
+
 void ft_printf(const char *str, ...)
 {
 	int i;
@@ -23,12 +30,15 @@ void ft_printf(const char *str, ...)
 	g_param = (t_param*)malloc(sizeof(t_param));
 	g_flag = 0;
 	param_setzero();
+
+	va_list ap;
+	va_start(ap, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
-		{
+		{	
 			i+=ft_analyze(&str[i]);
-			//print_param();
+			print_param(ap);
 		}
 		else
 		{

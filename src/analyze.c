@@ -194,8 +194,9 @@ int ft_analyze(const char *str)
 
 int main(void)
 {
-		//printf(" % %dd", 10);
-		ft_printf("%%d\n");
+		//printf(" %X", );
+
+		ft_printf("%X %d\n", 10, -3);
 		printf("plus	 %d\n", g_param->plus);
 		printf("minus	 %d\n", g_param->minus);
   		printf("space	 %d\n", g_param->space);
@@ -205,5 +206,4 @@ int main(void)
   		printf("prescision  %d\n", g_param->prescision);
 		printf("size		%d\n", g_param->size);
 		printf("type		%c\n", g_param->type);
-
 }
